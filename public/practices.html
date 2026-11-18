@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joy Practices — It’s okay to laugh.</title>
+  <meta name="description" content="Serious joy practices: a 1-minute laugh reset, the No-Complain experiment, and a daily joy journal prompt.">
+  <meta name="theme-color" content="#FFF8EC">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <div data-site-header></div>
+  <main id="main">
+    <section class="page-hero">
+      <div class="deco" data-sun="plain" data-label=""></div>
+      <div class="wrap">
+        <p class="eyebrow">Serious joy practices</p>
+        <h1>Joy is a <em>muscle.</em></h1>
+        <p class="lede">Reading about joy is lovely. Practicing it is better. Three small tools — use them daily, laugh at yourself often. Your progress stays private, saved only in this browser.</p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <!-- 1. Laugh reset -->
+      <section class="tool reveal" id="laugh" aria-labelledby="t-laugh">
+        <div class="side bg-yellow">
+          <p class="eyebrow" style="margin:0">Practice 01 · 60 seconds</p>
+          <h2 id="t-laugh">1-minute laugh reset</h2>
+          <p>Laughter changes your body before it changes your mind. Even a laugh you start on purpose tends to turn into a real one. Follow the sun.</p>
+          <ul class="how">
+            <li>Best done alone (or with someone brave).</li>
+            <li>Fake it until it isn’t fake.</li>
+            <li>Use it before a hard conversation, after bad news, or whenever you notice your shoulders near your ears.</li>
+          </ul>
+        </div>
+        <div class="stage">
+          <div class="timer">
+            <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="54"/><circle class="ring-fg" cx="60" cy="60" r="54"/></svg>
+            <div data-sun data-label="Laughing sun timer"></div>
+            <span class="count" aria-live="off">1:00</span>
+          </div>
+          <p class="laugh-prompt" aria-live="polite">Ready when you are.</p>
+          <button class="btn" id="laugh-start">Start the reset <span class="arrow">→</span></button>
+          <p class="tiny" id="laugh-stats"></p>
+        </div>
+      </section>
+
+      <!-- 2. No-complain -->
+      <section class="tool reveal" id="no-complain" aria-labelledby="t-nc">
+        <div class="side bg-coral">
+          <p class="eyebrow" style="margin:0">Practice 02 · 7 days, then 21</p>
+          <h2 id="t-nc">The No-Complain experiment</h2>
+          <p>Complaining is a habit wearing a disguise — it feels like honesty but works like a rehearsal of everything wrong. Try going a full week without it.</p>
+          <ul class="how">
+            <li>Tap <b>Start</b>. Every day without a complaint counts.</li>
+            <li>Slipped? Tap <b>I complained</b>. The streak resets — no guilt, just a fresh start.</li>
+            <li>Turned a complaint into a request or a thank-you? Log it. That’s the real win.</li>
+          </ul>
+        </div>
+        <div class="stage">
+          <div class="streak-label">Current streak</div>
+          <div class="streak" id="nc-streak">0</div>
+          <div class="streak-label" id="nc-unit">days without complaining</div>
+          <div class="days" id="nc-days" aria-hidden="true"></div>
+          <div class="btn-row" style="justify-content:center;margin-top:4px">
+            <button class="btn btn-small" id="nc-start">Start the experiment</button>
+            <button class="btn btn-small btn-ghost" id="nc-slip" hidden>I complained 😬</button>
+            <button class="btn btn-small btn-yellow" id="nc-flip" hidden>I flipped one ↺</button>
+          </div>
+          <p class="reframe" id="nc-msg" aria-live="polite">Pro tip: a complaint is just a request that hasn’t been asked yet.</p>
+          <div class="stats"><span><b id="nc-best">0</b>best streak</span><span><b id="nc-flips">0</b>complaints flipped</span><span><b id="nc-resets">0</b>fresh starts</span></div>
+          <button class="tiny" id="nc-clear" style="background:none;border:0;text-decoration:underline;cursor:pointer" hidden>Reset everything</button>
+        </div>
+      </section>
+
+      <!-- 3. Journal -->
+      <section class="tool reveal" id="journal" aria-labelledby="t-j">
+        <div class="side bg-blue" style="color:var(--cream)">
+          <p class="eyebrow" style="margin:0;color:var(--cream)">Practice 03 · 5 minutes</p>
+          <h2 id="t-j">Joy journal prompt</h2>
+          <p>Galut trains our eyes to scan for what’s missing. This retrains them to notice what’s here. One prompt, a few honest lines, every day.</p>
+          <ul class="how">
+            <li>Don’t like the prompt? Shuffle. No rules.</li>
+            <li>Write three lines minimum. Specific beats profound.</li>
+            <li>Entries stay on this device. Download them anytime.</li>
+          </ul>
+        </div>
+        <div class="stage">
+          <div class="journal">
+            <div class="prompt-card" id="j-prompt" aria-live="polite">What made you smile today that you almost didn’t notice?</div>
+            <label class="sr-only" for="j-text">Your journal entry</label>
+            <textarea id="j-text" placeholder="Start writing…"></textarea>
+            <div class="row">
+              <button class="btn btn-small" id="j-save">Save entry</button>
+              <button class="btn btn-small btn-ghost" id="j-shuffle">Shuffle prompt ↻</button>
+              <button class="btn btn-small btn-ghost" id="j-download" hidden>Download ↓</button>
+            </div>
+            <ul class="entries" id="j-entries"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <div data-site-footer></div>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/practices.js" defer></script>
+</body>
+</html>
